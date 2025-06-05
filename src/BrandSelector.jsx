@@ -6,7 +6,8 @@ const BrandSelector = () => {
   return (
     <div
       className="min-h-screen bg-no-repeat bg-cover bg-center flex flex-col items-center justify-center text-center"
-      style={{ backgroundImage: "url('/static/fragrantix_static_hero.jpg')" }}
+      style={{ backgroundImage: "url('/images/fragrantix_static_hero.jpg')" }}
+
     >
       {/* Overlay to slightly darken and enhance contrast */}
       <div className="absolute inset-0 bg-black/50 z-0" />
