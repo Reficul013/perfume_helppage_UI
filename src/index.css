@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.perfume-card img {
+  transition: all 10s ease-in-out;
+}

@@ -25,7 +25,7 @@ const BrandPage = () => {
             key={i}
             name={p.name}
             image={p.image_url}
-            cloneImage="https://via.placeholder.com/400x600?text=Clone+Image"
+            cloneImage={p.clone_image_url}  // ✅ fixed: now uses real original imag
           />
         ))}
       </div>
