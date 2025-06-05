@@ -8,7 +8,7 @@ const BrandPage = () => {
   const [perfumes, setPerfumes] = useState([]);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/perfumes/")
+    axios.get(`${import.meta.env.VITE_API_URL}/perfumes/`)
       .then(res => {
         const filtered = res.data.filter(p => p.brand.toLowerCase() === brandName.toLowerCase());
         setPerfumes(filtered);
