@@ -43,7 +43,7 @@ const BrandPage = () => {
       {/* Disclaimer */}
       <div className="mt-12 text-sm text-center text-gray-600 max-w-2xl mx-auto">
         <p>
-          <strong>Disclaimer:</strong> The perfumes listed here are not exact replicas of the originals. They are crafted to evoke a similar essence or inspiration and are only inspired by the original fragrances.
+          <strong>Disclaimer:</strong> The perfumes listed here are not exact replicas of the originals. The craft evokes a similar essence or inspiration of the original fragrances.
         </p>
       </div>
     </div>
