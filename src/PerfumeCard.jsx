@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const PerfumeCard = ({ name, image, cloneImage }) => {
+const PerfumeCard = ({ name, image, cloneImage, cloneOf }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [toggled, setToggled] = useState(false);
 
@@ -13,6 +13,16 @@ const PerfumeCard = ({ name, image, cloneImage }) => {
     if (isMobile) {
       setToggled(prev => !prev);
     }
+  };
+
+  // Determine which name to show
+  const getDisplayedName = () => {
+    if (isMobile) {
+      return toggled && cloneOf ? cloneOf : name;
+    }
+    return cloneOf ? (
+      <span className="group-hover:hidden">{name}</span>
+    ) : name;
   };
 
   return (
@@ -40,9 +50,20 @@ const PerfumeCard = ({ name, image, cloneImage }) => {
         />
       )}
 
-      {/* Perfume Name */}
+      {/* Perfume Name (Changes on toggle/hover) */}
       <div className="absolute bottom-0 bg-white bg-opacity-80 text-center w-full py-2 font-semibold text-sm z-10">
-        {name}
+        {isMobile
+          ? toggled && cloneOf
+            ? cloneOf
+            : name
+          : cloneOf
+          ? (
+            <>
+              <span className="group-hover:hidden">{name}</span>
+              <span className="hidden group-hover:inline">{cloneOf}</span>
+            </>
+          )
+          : name}
       </div>
     </div>
   );

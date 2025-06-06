@@ -43,6 +43,7 @@ const BrandPage = () => {
             name={p.name}
             image={p.image_url}
             cloneImage={p.clone_image_url}
+            cloneOf={p.clone_of}
           />
         ))}
       </div>
