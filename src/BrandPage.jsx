@@ -8,26 +8,43 @@ const BrandPage = () => {
   const [perfumes, setPerfumes] = useState([]);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL}/perfumes/`)
-      .then(res => {
-        const filtered = res.data.filter(p => p.brand.toLowerCase() === brandName.toLowerCase());
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/perfumes/`)
+      .then((res) => {
+        const filtered = res.data.filter(
+          (p) => p.brand.toLowerCase() === brandName.toLowerCase()
+        );
         setPerfumes(filtered);
       })
-      .catch(err => console.error("API fetch failed:", err));
+      .catch((err) => {
+        console.error("Failed to fetch perfumes:", err);
+      });
   }, [brandName]);
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-4 text-center capitalize">{brandName} Perfumes</h1>
+    <div className="min-h-screen bg-gray-100 py-10 px-6">
+      {/* Brand Title */}
+      <h1 className="text-3xl md:text-4xl font-bold text-center capitalize text-gray-800 mb-8">
+        {brandName} Perfumes
+      </h1>
+
+      {/* Perfume Grid */}
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {perfumes.map((p, i) => (
           <PerfumeCard
             key={i}
             name={p.name}
             image={p.image_url}
-            cloneImage={p.clone_image_url}  // ✅ fixed: now uses real original imag
+            cloneImage={p.clone_image_url}
           />
         ))}
+      </div>
+
+      {/* Disclaimer */}
+      <div className="mt-12 text-sm text-center text-gray-600 max-w-2xl mx-auto">
+        <p>
+          <strong>Disclaimer:</strong> The perfumes listed here are not exact replicas of the originals. They are crafted to evoke a similar essence or inspiration and are only inspired by the original fragrances.
+        </p>
       </div>
     </div>
   );
