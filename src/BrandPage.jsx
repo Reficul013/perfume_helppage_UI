@@ -24,9 +24,16 @@ const BrandPage = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-10 px-6">
       {/* Brand Title */}
-      <h1 className="text-3xl md:text-4xl font-bold text-center capitalize text-gray-800 mb-8">
+      <h1 className="text-3xl md:text-4xl font-bold text-center capitalize text-gray-800 mb-2">
         {brandName} Perfumes
       </h1>
+
+      {/* Disclaimer */}
+      <div className="text-sm text-center text-gray-600 max-w-2xl mx-auto mb-8">
+        <p>
+          <strong>Disclaimer:</strong> The perfumes listed here are not exact replicas of the originals. They are crafted to resemble or take inspiration from the original fragrances in essence or style.
+        </p>
+      </div>
 
       {/* Perfume Grid */}
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -38,13 +45,6 @@ const BrandPage = () => {
             cloneImage={p.clone_image_url}
           />
         ))}
-      </div>
-
-      {/* Disclaimer */}
-      <div className="mt-12 text-sm text-center text-gray-600 max-w-2xl mx-auto">
-        <p>
-          <strong>Disclaimer:</strong> The perfumes listed here are not exact replicas of the originals. The craft evokes a similar essence or inspiration of the original fragrances.
-        </p>
       </div>
     </div>
   );
