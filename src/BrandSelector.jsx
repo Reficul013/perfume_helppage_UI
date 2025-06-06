@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const brands = ["Scentari", "mehdi hasan indian perfumery"];
+const brands = ["Scentari"];
 
 const BrandSelector = () => {
   return (
