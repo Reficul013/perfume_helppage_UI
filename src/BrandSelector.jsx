@@ -18,7 +18,7 @@ const BrandSelector = () => {
           Fragrantix
         </h1>
         <p className="text-gray-200 text-lg mb-10 drop-shadow-sm">
-          Explore exquisite perfume brands and their iconic clones
+          Discover the original inspirations behind your favorite perfumes.
         </p>
 
         {/* Brand Buttons */}
